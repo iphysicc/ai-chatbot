@@ -21,7 +21,19 @@ export const postRequestBodySchema = z.object({
     role: z.enum(['user']),
     parts: z.array(partSchema),
   }),
-  selectedChatModel: z.enum(['chat-model', 'chat-model-reasoning']),
+  selectedChatModel: z.enum([
+    // New wisdom-ai models
+    'wisdom-ai-gpt5',
+    'wisdom-ai-gpt5-mini',
+    'wisdom-ai-gpt5-nano',
+    'wisdom-ai-dsv3',
+    'wisdom-ai-dsr1',
+    'wisdom-ai-claude-sonnet-4',
+    'wisdom-ai-gemini-2.5-flash',
+    // Legacy models for backward compatibility
+    'chat-model',
+    'chat-model-reasoning',
+  ]),
   selectedVisibilityType: z.enum(['public', 'private']),
 });
 

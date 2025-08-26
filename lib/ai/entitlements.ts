@@ -12,7 +12,11 @@ export const entitlementsByUserType: Record<UserType, Entitlements> = {
    */
   guest: {
     maxMessagesPerDay: 20,
-    availableChatModelIds: ['chat-model', 'chat-model-reasoning'],
+    availableChatModelIds: [
+      'wisdom-ai-gpt5',
+      'wisdom-ai-gpt5-mini',
+      'wisdom-ai-gpt5-nano',
+    ],
   },
 
   /*
@@ -20,7 +24,15 @@ export const entitlementsByUserType: Record<UserType, Entitlements> = {
    */
   regular: {
     maxMessagesPerDay: 100,
-    availableChatModelIds: ['chat-model', 'chat-model-reasoning'],
+    availableChatModelIds: [
+      'wisdom-ai-gpt5',
+      'wisdom-ai-gpt5-mini',
+      'wisdom-ai-gpt5-nano',
+      'wisdom-ai-dsv3',
+      'wisdom-ai-dsr1',
+      'wisdom-ai-claude-sonnet-4',
+      'wisdom-ai-gemini-2.5-flash',
+    ],
   },
 
   /*

@@ -24,7 +24,7 @@
 - [AI SDK](https://sdk.vercel.ai/docs)
   - Unified API for generating text, structured objects, and tool calls with LLMs
   - Hooks for building dynamic chat and generative user interfaces
-  - Supports xAI (default), OpenAI, Fireworks, and other model providers
+  - Supports custom OpenAI-compatible providers, OpenAI, Anthropic, and other model providers
 - [shadcn/ui](https://ui.shadcn.com)
   - Styling with [Tailwind CSS](https://tailwindcss.com)
   - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
@@ -36,7 +36,17 @@
 
 ## Model Providers
 
-This template ships with [xAI](https://x.ai) `grok-2-1212` as the default chat model. However, with the [AI SDK](https://sdk.vercel.ai/docs), you can switch LLM providers to [OpenAI](https://openai.com), [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), and [many more](https://sdk.vercel.ai/providers/ai-sdk-providers) with just a few lines of code.
+This template ships with custom wisdom-ai models via an OpenAI-compatible API endpoint. The available models include:
+
+- **wisdom-ai-gpt5** (via Gpt5) - Primary chat model
+- **wisdom-ai-gpt5-mini** (via Gpt5 Mini) - Title generation
+- **wisdom-ai-gpt5-nano** (via Gpt5 Nano)
+- **wisdom-ai-dsv3** (via DeepseekV3)
+- **wisdom-ai-dsr1** (via DeepseekR1) - Reasoning model
+- **wisdom-ai-claude-sonnet-4** (via Claude Sonnet 4) - Artifact generation
+- **wisdom-ai-gemini-2.5-flash** (via Gemini 2.5 Flash)
+
+With the [AI SDK](https://sdk.vercel.ai/docs), you can easily switch to other LLM providers like [OpenAI](https://openai.com), [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), and [many more](https://sdk.vercel.ai/providers/ai-sdk-providers) with just a few lines of code.
 
 ## Deploy Your Own
 
