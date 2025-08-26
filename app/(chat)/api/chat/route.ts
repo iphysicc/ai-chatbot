@@ -157,7 +157,8 @@ export async function POST(request: Request) {
           messages: convertToModelMessages(uiMessages),
           stopWhen: stepCountIs(5),
           experimental_activeTools:
-            selectedChatModel === 'chat-model-reasoning' || selectedChatModel === 'wisdom-ai-dsr1'
+            selectedChatModel === 'chat-model-reasoning' ||
+            selectedChatModel.startsWith('wisdom-ai-')
               ? []
               : [
                   'getWeather',
@@ -224,7 +225,10 @@ export async function POST(request: Request) {
     }
 
     console.error('Unexpected error in chat route:', error);
-    return new ChatSDKError('bad_request:api', 'An unexpected error occurred').toResponse();
+    return new ChatSDKError(
+      'bad_request:api',
+      'An unexpected error occurred',
+    ).toResponse();
   }
 }
 
